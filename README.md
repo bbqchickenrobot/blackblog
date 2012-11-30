@@ -2,7 +2,7 @@
 
 ## My Blogging Engine
 
-This is my take on a blogging engine. I know there are already hundreds out there but I wanted to create my own purely for geek factor purposes.
+This is my take on a blogging engine. I know there are already hundreds out there but I wanted to create my own purely for geek factor purposes. This will afford me the opportunity to get up to scratch on some technologies I haven't had a chance to check out yet in great depth.
 
 #### Technology:
 
