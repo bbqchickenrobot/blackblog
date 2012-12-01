@@ -31,6 +31,7 @@ namespace BlackBlog
 
         protected void Application_Start()
         {
+            System.Data.Entity.Database.SetInitializer(new BlackBlog.Models.SampleData());
             AreaRegistration.RegisterAllAreas();
 
             RegisterGlobalFilters(GlobalFilters.Filters);

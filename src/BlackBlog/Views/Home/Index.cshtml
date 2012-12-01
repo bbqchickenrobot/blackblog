@@ -1,11 +1,23 @@
-﻿@model BlackBlog.Models.Post
+﻿@model BlackBlog.Models.PostPaging
 @{
     ViewBag.Title = "Home";
 }
 
-<h3>@Model.Title</h3>
-<p class="muted">Post written by <a href="about">@Model.Author</a></p>
-@Model.Body
+<h3>@Model.CurrentPost.Title</h3>
+<p class="muted">Post written by <a href="about">@Model.CurrentPost.Author</a></p>
+@Html.Raw(@Model.CurrentPost.Body)
 <hr>
-<p class="muted"><small>Posted: @Model.DateCreated.ToString("dd MMM yyyy") <br />
-Previous Post: <a href="previous-post">Is Moodle any good?</a></small></p>
+<p class="muted"><small>Posted: @Model.CurrentPost.DatePublish.ToString("dd MMM yyyy")</small> 
+@if (@Model.NextPost != null) 
+{
+    <br />
+    <text><small>Next Post: <a href='previous-post'>@Model.NextPost.Title</a></small></text>
+}
+@if (@Model.PreviousPost != null) 
+{
+    <br />
+    <text><small>Previous Post: <a href='previous-post'>@Model.PreviousPost.Title</a></small></text>
+}
+
+</p>
+

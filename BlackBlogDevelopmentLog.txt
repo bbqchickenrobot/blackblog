@@ -25,3 +25,20 @@ BlackBlog Development Log
 	=> Modify Archives/Index.cshtml to use the @Model IEnumerable<BlackBlog.Models.Post>
 
 	=> Fixed up links for Home and Archives in _Layout.cshtml
+
+	=> Add AboutController
+	=> Copied content into About/Index.cshtml from www.kestrelblackmore.com and updated with last couple of jobs
+
+	=> Fixed up links for About in _Layout.cshtml
+
+	=> Added more fields to Post.cs
+
+	=> Added Entity Framework
+	=> Web.config setting
+	=> Model/BlackBlogEntities.cs context class
+	=> Model/SampleData.cs and Global.asax.cs for loading test data
+
+	=> Work on Previous / Next Post
+	=> Model/PostPaging.cs holds reference to prev, current and next posts
+	=> Modified HomeController/Index and Index.cshtml to cater for this new object.
+

@@ -10,22 +10,14 @@ namespace BlackBlog.Controllers
 {
     public class ArchivesController : Controller
     {
+        BlackBlogEntities db = new BlackBlogEntities();
         //
         // GET: /Archives/
 
         public ActionResult Index()
         {
-            var posts = new  List<Post> 
-            { 
-                new Post {
-                            Title = "How to be an elite haxor whilst raising 3 kids",
-                            DateCreated = DateTime.Now
-                          },
-                new Post {
-                            Title = "Be Legendary or Die Trying!",
-                            DateCreated = DateTime.Now.AddDays(-3)
-                          },
-            };
+
+            var posts = db.Posts.ToList().OrderByDescending(p => p.DatePublish);
 
             return View(posts);
         }

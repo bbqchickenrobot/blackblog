@@ -10,20 +10,40 @@ namespace BlackBlog.Controllers
 {
     public class HomeController : Controller
     {
+        BlackBlogEntities db = new BlackBlogEntities();
+
         //
         // GET: /Home/
 
         public ActionResult Index()
         {
-            var post = new Post
-            {
-                Title = "Testing Title",
-                Author = "Kestrel Blackmore",
-                Body = "This is the body of the message",
-                DateCreated = DateTime.Now
-            }; 
 
-            return View(post);
+            var postpaging = new PostPaging();
+
+            postpaging.CurrentPost = (from rec in db.Posts
+                                      orderby rec.DatePublish descending
+                                      select rec).First();
+
+            try
+            {
+                postpaging.PreviousPost = (from rec in db.Posts
+                                           where rec.PostId < postpaging.CurrentPost.PostId
+                                           orderby rec.DatePublish descending
+                                           select rec).Take(1).First();
+
+                postpaging.PreviousPost = (from rec in db.Posts
+                                           where rec.PostId > postpaging.CurrentPost.PostId
+                                           orderby rec.DatePublish descending
+                                           select rec).Take(1).First();
+            
+            }
+            catch (InvalidOperationException)
+            {
+                   // ignore for now 
+            }
+            
+            
+            return View(postpaging);
         }
 
         public string Post(int id)

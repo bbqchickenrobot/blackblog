@@ -68,7 +68,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\BlackBlogEntities.cs" />
     <Compile Include="Models\Post.cs" />
+    <Compile Include="Models\PostPaging.cs" />
+    <Compile Include="Models\SampleData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -136,7 +139,9 @@
     <Content Include="Views\About\Index.cshtml" />
     <None Include="Views\Shared\_Layout.cshtml.orig" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
