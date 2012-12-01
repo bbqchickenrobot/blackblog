@@ -11,6 +11,7 @@ BlackBlog Development Log
 
 3. Create MVC application
 	=> Empty site, HTML 5
+	
 	=> Add HomeController
 	=> Copy across assets directory from html/
 	=> Modify _Layouts.cshtml based on html/index.html
@@ -18,3 +19,9 @@ BlackBlog Development Log
 	=> Created Model/Post.cs (Title, Body, Author, CreatedDate)
 	=> Create post instance in HomeController/Index and pass to view
 	=> Modify View/Index.cshtml to use the @Model
+	
+	=> Add ArchivesController
+	=> Create List<Post> instance in ArchivesController/Index and pass to view
+	=> Modify Archives/Index.cshtml to use the @Model IEnumerable<BlackBlog.Models.Post>
+
+	=> Fixed up links for Home and Archives in _Layout.cshtml

@@ -1,0 +1,25 @@
+﻿@model IEnumerable<BlackBlog.Models.Post>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h3>Archives</h3>
+
+
+  
+
+
+
+
+    @foreach (var post in Model)
+    {
+        <div class="row">
+            <div class="span2">
+                <p>@post.DateCreated.ToString("dd MMM yyyy")</p>
+            </div>
+            <div class="span8">
+                <p><a href="#">@post.Title</a></p>
+            </div>
+        </div>
+    }
