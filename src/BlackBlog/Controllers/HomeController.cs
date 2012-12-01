@@ -22,7 +22,7 @@ namespace BlackBlog.Controllers
 
             postpaging.CurrentPost = (from rec in db.Posts
                                       orderby rec.DatePublish descending
-                                      select rec).First();
+                                      select rec).Skip(1).First();
 
             try
             {
@@ -31,7 +31,7 @@ namespace BlackBlog.Controllers
                                            orderby rec.DatePublish descending
                                            select rec).Take(1).First();
 
-                postpaging.PreviousPost = (from rec in db.Posts
+                postpaging.NextPost = (from rec in db.Posts
                                            where rec.PostId > postpaging.CurrentPost.PostId
                                            orderby rec.DatePublish descending
                                            select rec).Take(1).First();
