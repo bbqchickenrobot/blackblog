@@ -1,0 +1,7 @@
+C:\prj\blackblog\src\BlackBlog\bin\BlackBlog.dll
+C:\prj\blackblog\src\BlackBlog\bin\BlackBlog.pdb
+C:\prj\blackblog\src\BlackBlog\bin\EntityFramework.dll
+C:\prj\blackblog\src\BlackBlog\bin\EntityFramework.xml
+C:\prj\blackblog\src\BlackBlog\obj\Debug\ResolveAssemblyReference.cache
+C:\prj\blackblog\src\BlackBlog\obj\Debug\BlackBlog.dll
+C:\prj\blackblog\src\BlackBlog\obj\Debug\BlackBlog.pdb
