@@ -1,0 +1,24 @@
+﻿@model BlackBlog.Models.Post
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h3>@Html.DisplayFor(model => model.Title)</h3>
+<p class="muted">Post written by @Html.ActionLink(@Model.Author, "Index", "About")</p>
+@Html.Raw(@Model.Body)
+<hr>
+<p class="muted"><small>Posted: @Model.DatePublish.ToString("dd MMM yyyy")</small> 
+@*@if (@Model.NextPost != null) 
+{
+    <br />
+    <text><small>Next Post: <a href='previous-post'>@Model.NextPost.Title</a></small></text>
+}
+@if (@Model.PreviousPost != null) 
+{
+    <br />
+    <text><small>Previous Post: <a href='previous-post'>@Model.PreviousPost.Title</a></small></text>
+}*@
+
+</p>
+

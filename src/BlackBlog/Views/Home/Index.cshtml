@@ -4,19 +4,19 @@
 }
 
 <h3>@Model.CurrentPost.Title</h3>
-<p class="muted">Post written by <a href="about">@Model.CurrentPost.Author</a></p>
+<p class="muted">Post written by @Html.ActionLink(@Model.CurrentPost.Author, "Index", "About")</p>
 @Html.Raw(@Model.CurrentPost.Body)
 <hr>
 <p class="muted"><small>Posted: @Model.CurrentPost.DatePublish.ToString("dd MMM yyyy")</small> 
 @if (@Model.NextPost != null) 
 {
     <br />
-    <text><small>Next Post: <a href='previous-post'>@Model.NextPost.Title</a></small></text>
+    <text><small>Next Post: <a href='/Post/Details/@Model.NextPost.PostId'>@Model.NextPost.Title</a></small></text>
 }
 @if (@Model.PreviousPost != null) 
 {
     <br />
-    <text><small>Previous Post: <a href='previous-post'>@Model.PreviousPost.Title</a></small></text>
+    <text><small>Previous Post: <a href='/Post/Details/@Model.PreviousPost.PostId'>@Model.PreviousPost.Title</a></small></text>
 }
 
 </p>
